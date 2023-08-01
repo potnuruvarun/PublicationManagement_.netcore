@@ -1,0 +1,40 @@
+#phone,#email {
+    margin-top:20px;
+    width:300px;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    color:#666;
+    font-family: Geneva,sans-serif;
+    text-align:center;
+    font-size:20px;
+    background-color: #fafafa;
+    background-size: 14%;
+    background-repeat: no-repeat;
+    background-position: 3% 50%;
+    background-image: url('http://valvesmfg.com/images/icon/mobile-phone.gif');
+    outline:none;
+    border:none;
+    border-style:none;
+    font-weight:700;
+    cursor:pointer;
+    padding:20px;
+    border-radius:50px
+}
+
+/* body{
+  background: #222;
+  color: #eee;
+  width: 600px;
+  margin: 0 auto
+} */
+
+/* * * ========================================== * CUSTOM UTIL CLASSES * ========================================== * */
+.login, .image {
+    min-height: 100vh;
+}
+.bg-image {
+    background-image: url('https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg');
+    background-size: cover;
+    background-position: center center;
+}
