@@ -17,10 +17,29 @@ namespace PublicationManagement.Services.PublishServices
             this.publishing = publishingRepo;
         }
 
-        
+        public async Task<IEnumerable<int>> allcount()
+        {
+            return await  publishing.allcount();
+        }
+
+        public async Task<IEnumerable<PublishingModels>> Alldata()
+        {
+            return await publishing.Alldata();
+        }
+
+        public async  Task<IEnumerable<PublishingModels>> facultycount()
+        {
+            return await publishing.facultycount();
+        }
+
         public async Task<int> Publish(PublishingModels model)
         {
           return await publishing.Publish(model);
+        }
+
+        public async Task<IEnumerable<PublishingModels>> studentcount()
+        {
+            return await publishing.studentcount();
         }
 
         public async Task<IEnumerable<PublishingModels>> viewdata()

@@ -22,6 +22,21 @@ namespace PublicationManagement.data.Publishing
 
         }
 
+        public async  Task<IEnumerable<int>> allcount()
+        {
+            return await QueryAsync<int>(StorageProcedure.countall, commandType: CommandType.StoredProcedure);
+        }
+
+        public async  Task<IEnumerable<PublishingModels>> Alldata()
+        {
+            return await QueryAsync<PublishingModels>(StorageProcedure.alldata, commandType: CommandType.StoredProcedure);
+        }
+
+        public async  Task<IEnumerable<PublishingModels>> facultycount()
+        {
+            return await QueryAsync<PublishingModels>(StorageProcedure.countfaculty, commandType: CommandType.StoredProcedure);
+        }
+
         public async Task<int> Publish(PublishingModels model)
         {
             var parameters = new DynamicParameters();            
@@ -41,6 +56,11 @@ namespace PublicationManagement.data.Publishing
 
 
 
+        }
+
+        public async  Task<IEnumerable<PublishingModels>> studentcount()
+        {
+            return await QueryAsync<PublishingModels>(StorageProcedure.countstudent, commandType: CommandType.StoredProcedure);
         }
 
         public async  Task<IEnumerable<PublishingModels>> Viewdata()

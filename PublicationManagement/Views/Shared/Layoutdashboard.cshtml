@@ -78,7 +78,7 @@
                             <div class="nav-profile-text">
 
 
-                                <span class="font-weight-bold mb-2">varun</span>
+                                <span class="font-weight-bold mb-2">@ViewBag.Mysession</span>
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -231,13 +231,46 @@
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
+        
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index","Publish")">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                           aria-controls="ui-basic">
                             <span class="menu-title">Student</span>
-                            <i class="mdi mdi-camera-timer"></i>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-content-paste"></i>
                         </a>
-                        @*@Html.ActionLink("Timesheet", "Timesheet", "Timesheetdata")*@
-
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("Index","Publish")">Student</a></li>
+                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
+                            </ul>
+                        </div>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("newpublish","Publish")">Single User Form</a></li>
+                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic1" aria-expanded="false"
+                           aria-controls="ui-basic1">
+                            <span class="menu-title">Faculty</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-content-paste"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("Index","Faculty")">Faculty</a></li>
+                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
+                            </ul>
+                        </div>
+                        <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("newpublish","Faculty")">Single User Form</a></li>
+                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Index","Faculty")">
@@ -248,27 +281,8 @@
 
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                           aria-controls="ui-basic">
-                            <span class="menu-title">Hrms</span>
-                            <i class="menu-arrow"></i>
-                            <i class="mdi mdi-content-paste"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")">Leave Management</a></li>
-                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
-                            </ul>
-                        </div>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("Create","userform")">Single User Form</a></li>
-                                @*<li class="nav-item"> <a class="nav-link" href="@Url.Action("LeavesData","HRMS")>Leaves</a></li>*@
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
+                  
+                   @* <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic1" aria-expanded="false"
                            aria-controls="ui-basic1">
                             <span class="menu-title">Project Management</span>
@@ -281,7 +295,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="#">Typography</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li>*@
                     @*<li class="nav-item">
                     <a class="nav-link" href="#">
                     <span class="menu-title">Announcement</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

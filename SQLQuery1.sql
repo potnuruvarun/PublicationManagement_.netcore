@@ -44,6 +44,7 @@ Dateofpublish date default CURRENT_TIMESTAMP,
 PublisherType varchar(50)
 )
 
+select * from publishing
 alter procedure sp_publishing
 @Publicationdetail varchar(50),
 @Publishername varchar(50),
@@ -51,6 +52,8 @@ alter procedure sp_publishing
 as
 begin
 insert into publishing(Publicationdetail,Publishername,PublisherType)values(@Publicationdetail,@Publishername,@PublisherType)
+insert into CombinedPublish(Publicationdetail,Publishername,PublisherType)values(@Publicationdetail,@Publishername,@PublisherType)
+
 end
 
 select * from publishing
@@ -82,6 +85,8 @@ alter procedure sp_facultypublishing
 as
 begin
 insert into Facultypublish(Publicationdetail,Publishername,PublisherType)values(@Publicationdetail,@Publishername,@PublisherType)
+insert into CombinedPublish(Publicationdetail,Publishername,PublisherType)values(@Publicationdetail,@Publishername,@PublisherType)
+
 end
 
 
@@ -90,3 +95,59 @@ as
 begin
 select * from Facultypublish
 end
+
+create procedure alldata
+as
+begin
+select * from publishing unionall select * from Facultypublish
+end
+
+execute alldata
+
+select * from publishing unionall select * from Facultypublish
+
+CREATE TABLE CombinedPublish
+(
+    id INT PRIMARY KEY IDENTITY,
+    Publicationdetail VARCHAR(50),
+    Publishername VARCHAR(50),
+    Dateofpublish DATE DEFAULT CURRENT_TIMESTAMP,
+    PublisherType VARCHAR(50),
+);
+
+
+select * from CombinedPublish
+
+
+create procedure sp_Alldata
+as
+begin
+select * from CombinedPublish
+end
+execute  sp_Alldata
+
+create procedure sp_countallpublishers
+as
+begin
+select  count(Publicationdetail) as No_Of_Publishers  from CombinedPublish
+end
+
+execute sp_countallpublishers
+
+alter procedure sp_countpublishers
+as
+begin
+select  count(Publicationdetail) as No_Of_Publishers  from publishing
+end
+
+execute sp_countpublishers
+
+create procedure sp_countfacultypublishers
+as
+begin
+select  count(Publicationdetail) as No_Of_Publishers  from Facultypublish
+end
+
+execute sp_countpublishers
+
+delete 

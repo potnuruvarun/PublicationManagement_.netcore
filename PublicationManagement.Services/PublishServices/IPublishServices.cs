@@ -12,5 +12,10 @@ namespace PublicationManagement.Services.PublishServices
         Task<int>Publish(PublishingModels model);
 
         Task<IEnumerable<PublishingModels>> viewdata();
+        Task<IEnumerable<PublishingModels>> Alldata();
+
+        Task<IEnumerable<PublishingModels>> studentcount();
+        Task<IEnumerable<PublishingModels>> facultycount();
+        Task<IEnumerable<int>> allcount();
     }
 }

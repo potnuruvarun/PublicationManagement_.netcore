@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationManagement", "PublicationManagement\PublicationManagement.csproj", "{760D23F7-9DFB-43A9-B9CD-846E821849D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationManagement", "PublicationManagement\PublicationManagement.csproj", "{760D23F7-9DFB-43A9-B9CD-846E821849D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationManagement.data", "PublicationManagement.data\PublicationManagement.data.csproj", "{0336350A-A53B-4293-A7EB-F33CFAD8C3A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationManagement.data", "PublicationManagement.data\PublicationManagement.data.csproj", "{0336350A-A53B-4293-A7EB-F33CFAD8C3A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationManagement.Model", "PublicationManagement.Model\PublicationManagement.Model.csproj", "{A8D6EC0E-28CD-4DE8-97D7-C36A42170C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationManagement.Model", "PublicationManagement.Model\PublicationManagement.Model.csproj", "{A8D6EC0E-28CD-4DE8-97D7-C36A42170C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationManagement.Common", "PublicationManagement.Common\PublicationManagement.Common.csproj", "{B879A231-1F0B-470B-B060-48922E0AD638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationManagement.Common", "PublicationManagement.Common\PublicationManagement.Common.csproj", "{B879A231-1F0B-470B-B060-48922E0AD638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationManagement.Services", "PublicationManagement.Services\PublicationManagement.Services.csproj", "{E601CCFE-78AF-49EA-A1C5-C396EA2D5A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationManagement.Services", "PublicationManagement.Services\PublicationManagement.Services.csproj", "{E601CCFE-78AF-49EA-A1C5-C396EA2D5A10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{10CA4C3C-7D09-45ED-AF7A-BF0D3858033A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainController", "MainController\MainController.csproj", "{785A6B97-8183-446F-9A06-8A51CFCAED1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{E601CCFE-78AF-49EA-A1C5-C396EA2D5A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E601CCFE-78AF-49EA-A1C5-C396EA2D5A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E601CCFE-78AF-49EA-A1C5-C396EA2D5A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10CA4C3C-7D09-45ED-AF7A-BF0D3858033A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10CA4C3C-7D09-45ED-AF7A-BF0D3858033A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10CA4C3C-7D09-45ED-AF7A-BF0D3858033A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10CA4C3C-7D09-45ED-AF7A-BF0D3858033A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785A6B97-8183-446F-9A06-8A51CFCAED1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A6B97-8183-446F-9A06-8A51CFCAED1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785A6B97-8183-446F-9A06-8A51CFCAED1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785A6B97-8183-446F-9A06-8A51CFCAED1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,5 +13,10 @@ namespace PublicationManagement.data.Publishing
 
         Task<IEnumerable<PublishingModels>> Viewdata();
 
+        Task<IEnumerable<PublishingModels>>Alldata();
+        Task<IEnumerable<PublishingModels>> studentcount();
+        Task<IEnumerable<PublishingModels>> facultycount();
+        Task<IEnumerable<int>> allcount();
+
     }
 }

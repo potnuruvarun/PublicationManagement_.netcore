@@ -18,15 +18,16 @@ namespace PublicationManagement.Controllers
         }
         [HttpPost]
         public async  Task <IActionResult> Login(loginModels logindata)
-        {
-            if (
-                await services.Login(logindata) ==1)
             {
-                return RedirectToAction("Index", "Home");
+            if (await services.Login(logindata) ==1)
+            {
+                HttpContext.Session.SetString("username", logindata.Email);
+                return RedirectToAction("Dashboard", "Publish");
             }
             else
             {
-                return View();
+                ViewBag.error = "Invalid Account";
+                return RedirectToAction("Error", "Home");
             }
         }
     }

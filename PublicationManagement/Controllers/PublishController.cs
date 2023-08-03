@@ -31,6 +31,13 @@ namespace PublicationManagement.Controllers
 
             return Json(data);
         }
+
+        public async Task<JsonResult> Getalldata()
+        {
+            var data = await services.Alldata ();
+
+            return Json(data);
+        }
         public IActionResult newpublish()
         {
             return View();
@@ -45,9 +52,22 @@ namespace PublicationManagement.Controllers
         }
         public IActionResult Dashboard()
         {
+            ViewBag.Mysession= HttpContext.Session.GetString("username");
             return View();
         }
-        
+
+        public async Task<JsonResult> create(PublishingModels model)
+        {
+            var data=await services.Publish(model);
+            return Json(data);
+
+
+        }
+
+
+
+
+
 
 
     }
