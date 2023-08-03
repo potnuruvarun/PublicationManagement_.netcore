@@ -1,0 +1,342 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\Api\\Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\Api\\Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\Api\\Api.csproj",
+        "projectName": "Api",
+        "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\sit363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sit363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj"
+              },
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj"
+              },
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj"
+              },
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\PublicationManagement.Services.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\PublicationManagement.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj",
+        "projectName": "PublicationManagement.Common",
+        "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj",
+        "packagesPath": "C:\\Users\\sit363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sit363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj",
+        "projectName": "PublicationManagement.data",
+        "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj",
+        "packagesPath": "C:\\Users\\sit363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sit363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Common\\PublicationManagement.Common.csproj"
+              },
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.143, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj",
+        "projectName": "PublicationManagement.Model",
+        "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj",
+        "packagesPath": "C:\\Users\\sit363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sit363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\PublicationManagement.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\PublicationManagement.Services.csproj",
+        "projectName": "PublicationManagement.Services",
+        "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\PublicationManagement.Services.csproj",
+        "packagesPath": "C:\\Users\\sit363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sit363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.data\\PublicationManagement.data.csproj"
+              },
+              "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj": {
+                "projectPath": "C:\\Users\\sit363\\source\\repos\\PublicationManagement\\PublicationManagement.Model\\PublicationManagement.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
