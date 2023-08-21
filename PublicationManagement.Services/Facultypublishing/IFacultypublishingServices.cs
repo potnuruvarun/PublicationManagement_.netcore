@@ -1,4 +1,5 @@
-﻿using PublicationManagement.Model.Publishmodel;
+﻿using PublicationManagement.Model.DropdownModels;
+using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,8 @@ namespace PublicationManagement.Services.Facultypublishing
         Task<int> Publish(FacultyPublishingModel model);
 
         Task<IEnumerable<FacultyPublishingModel>> viewdata();
+
+        Task<IEnumerable<FacultyRoleModels>> faculty();
+
     }
 }

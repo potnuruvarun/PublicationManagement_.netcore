@@ -22,5 +22,9 @@ namespace Api
             services.AddMvc();
             services.AddHttpContextAccessor();
         }
+      
+
+
+
     }
 }

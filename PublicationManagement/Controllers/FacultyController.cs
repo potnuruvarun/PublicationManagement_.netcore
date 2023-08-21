@@ -36,6 +36,12 @@ namespace PublicationManagement.Controllers
 
 
         }
+
+        public async Task<JsonResult> faculty()
+        {
+            var data = await services.faculty();
+            return Json(data);
+        }
     }
 }
 

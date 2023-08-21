@@ -46,13 +46,16 @@ namespace PublicationManagement.Controllers
         public async  Task<IActionResult>newpublish(PublishingModels model)
         {
             await services.Publish(model);
-            return View();
+            return RedirectToAction("Index");
 
            
         }
         public IActionResult Dashboard()
         {
             ViewBag.Mysession= HttpContext.Session.GetString("username");
+         
+            //string base64ProfilePhoto = HttpContext.Session.GetString("profilePhoto");
+            //ViewBag.PhotoBytes = base64ProfilePhoto;
             return View();
         }
 
@@ -62,6 +65,12 @@ namespace PublicationManagement.Controllers
             return Json(data);
 
 
+        }
+
+        public async Task<JsonResult> student()
+        {
+            var data=await services.students();
+            return Json(data);
         }
 
 

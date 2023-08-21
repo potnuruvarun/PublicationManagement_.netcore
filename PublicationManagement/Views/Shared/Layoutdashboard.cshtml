@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<PublicationManagement.Model.RegistrationModels.RegistartionModel>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -72,8 +73,10 @@
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             <div class="nav-profile-img">
-                                <img src="~/Theme/Theme Template/PurpleAdmin-Free-Admin-Template-master/assets/images/faces/Varun Potnuru_ProfilePicture.jpg" alt="image">
-                                <span class="availability-status online"></span>
+@*                               <img src="data:image/jpeg;base64,@ViewBag.PhotoBytes" alt="Profile Photo" />
+*@                               <span class="availability-status online"></span>
+<img alt="@item.id"
+                         src="data:image/jpg;base64,@Convert.ToBase64String(@ViewBag.PhotoBytes)" />
                             </div>
                             <div class="nav-profile-text">
 

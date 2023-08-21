@@ -1,4 +1,5 @@
-﻿using PublicationManagement.Model.Publishmodel;
+﻿using PublicationManagement.Model.DropdownModels;
+using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,12 @@ namespace PublicationManagement.data.Publishing
         Task<IEnumerable<PublishingModels>> studentcount();
         Task<IEnumerable<PublishingModels>> facultycount();
         Task<IEnumerable<int>> allcount();
+
+        Task<IEnumerable<StudentRoleModels>> students();
+
+        Task<int>Delete(int id);
+
+        Task <IEnumerable<PublishingModels>>Edit(int id);
 
     }
 }

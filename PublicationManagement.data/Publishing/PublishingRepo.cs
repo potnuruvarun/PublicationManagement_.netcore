@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using PublicationManagement.Common.helpers;
 using PublicationManagement.Model.Config;
+using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,21 @@ namespace PublicationManagement.data.Publishing
         public async  Task<IEnumerable<PublishingModels>> Alldata()
         {
             return await QueryAsync<PublishingModels>(StorageProcedure.alldata, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<int> Delete(int id)
+        {
+            var param = new DynamicParameters();
+            param.Add("@id",id);
+           return await ExecuteAsync<PublishingModels>(StorageProcedure.deletepublishers, param, commandType: CommandType.StoredProcedure);
+           
+        }
+
+        public async Task<IEnumerable<PublishingModels>> Edit(int id)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@id",id);
+            return await QueryAsync<PublishingModels>(StorageProcedure.sp_edit,parameter, commandType: CommandType.StoredProcedure);
         }
 
         public async  Task<IEnumerable<PublishingModels>> facultycount()
@@ -61,6 +77,11 @@ namespace PublicationManagement.data.Publishing
         public async  Task<IEnumerable<PublishingModels>> studentcount()
         {
             return await QueryAsync<PublishingModels>(StorageProcedure.countstudent, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<IEnumerable<StudentRoleModels>> students()
+        {
+            return await QueryAsync<StudentRoleModels>(StorageProcedure.sp_Studnet, commandType: CommandType.StoredProcedure);
         }
 
         public async  Task<IEnumerable<PublishingModels>> Viewdata()

@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using PublicationManagement.Common.helpers;
 using PublicationManagement.Model.Config;
+using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace PublicationManagement.data.FacultyPublishing
                 return 0;
 
             }
+        }
+
+        public async  Task<IEnumerable<FacultyRoleModels>> faculty()
+        {
+            return await QueryAsync<FacultyRoleModels>(StorageProcedure.sp_faculty, commandType: CommandType.StoredProcedure);
+
         }
 
         public async  Task<IEnumerable<FacultyPublishingModel>> Viewdata()

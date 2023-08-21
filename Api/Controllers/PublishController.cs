@@ -13,16 +13,16 @@ namespace Api.Controllers
         IPublishServices services;
         IFacultypublishingServices facultypublishing;
 
-        public PublishController(IPublishServices _services,IFacultypublishingServices _facultypublishing)
+        public PublishController(IPublishServices _services, IFacultypublishingServices _facultypublishing)
         {
             services = _services;
             facultypublishing = _facultypublishing;
 
         }
-        
+
         [HttpGet]
         [Route("Get")]
-        public async  Task <IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             return Ok(await services.Alldata());
         }
@@ -50,6 +50,25 @@ namespace Api.Controllers
             services.Publish(model);
             return Ok();
         }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<IActionResult> Delpublish(int id)
+        {
+            return Ok(await services.Delete(id));
+        }
+
+
+
+        [HttpPut]
+        [Route("{id:int}")]
+
+        public async Task <IActionResult> Edit(int id)
+        {
+            return Ok(await services.Edit(id));
+        }
+
+
 
 
 

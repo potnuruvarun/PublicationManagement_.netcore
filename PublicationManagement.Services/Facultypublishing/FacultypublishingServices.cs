@@ -1,5 +1,6 @@
 ﻿using PublicationManagement.data.FacultyPublishing;
 using PublicationManagement.data.Publishing;
+using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PublicationManagement.Services.Facultypublishing
 {
-    public class FacultypublishingServices:IFacultypublishingServices
+    public class FacultypublishingServices : IFacultypublishingServices
     {
         IFacultyPublishing publishing;
 
@@ -18,6 +19,10 @@ namespace PublicationManagement.Services.Facultypublishing
             this.publishing = publishingRepo;
         }
 
+        public async  Task<IEnumerable<FacultyRoleModels>> faculty()
+        {
+            return await publishing.faculty();
+        }
 
         public async Task<int> Publish(FacultyPublishingModel model)
         {
