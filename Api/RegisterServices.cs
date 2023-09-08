@@ -1,5 +1,11 @@
-﻿using PublicationManagement.data;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using PublicationManagement.data;
+using PublicationManagement.Model.mail;
 using PublicationManagement.Services;
+using System.Configuration;
+using System.Text;
 
 namespace Api
 {
@@ -7,6 +13,7 @@ namespace Api
     {
         public static void RegisterService(this IServiceCollection services)
         {
+          
             Configure(services, DataRegister.GetTypes());
             Configure(services, ServiceRegister.GetTypes());
         }
@@ -22,8 +29,26 @@ namespace Api
             services.AddMvc();
             services.AddHttpContextAccessor();
         }
-      
+        public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidAudience = configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
+                };
+            });
+            services.AddMvc();
+        }
 
+       
 
 
     }

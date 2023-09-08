@@ -22,5 +22,14 @@ namespace Api.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("{searchdata}")]
+       
+        public async Task<IActionResult> searchdata(string searchdata)
+        {
+            return Ok(await Services.searchdata(searchdata));
+
+        }
+
     }
 }

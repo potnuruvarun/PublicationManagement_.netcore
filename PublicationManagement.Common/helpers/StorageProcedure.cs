@@ -41,5 +41,9 @@ namespace PublicationManagement.Common.helpers
         public const string? sp_Studnet = "sp_Studnet";
         public const string? sp_faculty = "sp_Admin";
         #endregion
+
+        #region searchdata
+        public const string searchdata = "searchdata";
+        #endregion
     }
 }

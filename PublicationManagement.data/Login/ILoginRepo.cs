@@ -1,5 +1,6 @@
 ﻿using PublicationManagement.Model.LoginModels;
 using PublicationManagement.Model.RegistrationModels;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace PublicationManagement.data.Login
 
 
         Task<IEnumerable<RegistartionModel>> Profile();
+
+        //void SendEmail(Message message);
 
 
 

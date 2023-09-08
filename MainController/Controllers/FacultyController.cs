@@ -38,7 +38,7 @@ namespace PublicationManagement.Controllers
         {
             string data = JsonConvert.SerializeObject(model);
             StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = client.PostAsync(client.BaseAddress + "Faculty/Facultypublish", content).Result;
+            HttpResponseMessage response = client.PostAsync(client.BaseAddress + "Faculty", content).Result;
 
 
             if (response.IsSuccessStatusCode)

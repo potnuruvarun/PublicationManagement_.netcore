@@ -16,5 +16,7 @@ namespace PublicationManagement.data.FacultyPublishing
 
         Task<IEnumerable<FacultyRoleModels>> faculty();
 
+        Task<IEnumerable<FacultyPublishingModel>> search(string Publishername);
+
     }
 }

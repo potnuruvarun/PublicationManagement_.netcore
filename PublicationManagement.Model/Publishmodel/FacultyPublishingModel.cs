@@ -21,5 +21,7 @@ namespace PublicationManagement.Model.Publishmodel
         public Nullable<System.DateTime> Dateofpublish { get; set; }
         [Required]
         public string? PublisherType { get; set; }
+
+        public string? searchdata { get; set; }
     }
 }

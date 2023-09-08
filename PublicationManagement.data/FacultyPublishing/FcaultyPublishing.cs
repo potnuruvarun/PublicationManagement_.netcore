@@ -52,5 +52,13 @@ namespace PublicationManagement.data.FacultyPublishing
         {
             return await QueryAsync<FacultyPublishingModel>(StorageProcedure.facultyviewdata, commandType: CommandType.StoredProcedure);
         }
+
+        public async Task<IEnumerable<FacultyPublishingModel>> search(string Publishername)
+        {
+           var parameter=new DynamicParameters();
+            parameter.Add("@Publishername", Publishername);
+            return await QueryAsync<FacultyPublishingModel>(StorageProcedure.searchdata,parameter, commandType: CommandType.StoredProcedure);
+
+        }
     }
 }

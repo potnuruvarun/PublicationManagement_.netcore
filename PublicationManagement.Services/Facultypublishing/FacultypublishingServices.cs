@@ -29,6 +29,11 @@ namespace PublicationManagement.Services.Facultypublishing
             return await publishing.Publish(model);
         }
 
+        public async  Task<IEnumerable<FacultyPublishingModel>> searchdata(string searchdata)
+        {
+            return await publishing.search(searchdata);
+        }
+
         public async Task<IEnumerable<FacultyPublishingModel>> viewdata()
         {
             return await publishing.Viewdata();

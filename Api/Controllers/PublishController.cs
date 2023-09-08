@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PublicationManagement.Model.Publishmodel;
 using PublicationManagement.Services.Facultypublishing;
@@ -8,6 +9,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PublishController : ControllerBase
     {
         IPublishServices services;
@@ -19,6 +21,7 @@ namespace Api.Controllers
             facultypublishing = _facultypublishing;
 
         }
+
 
         [HttpGet]
         [Route("Get")]
@@ -60,7 +63,7 @@ namespace Api.Controllers
 
 
 
-        [HttpPut]
+        [HttpGet]
         [Route("{id:int}")]
 
         public async Task <IActionResult> Edit(int id)
