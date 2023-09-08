@@ -23,4 +23,8 @@
     <ProjectReference Include="..\PublicationManagement.Services\PublicationManagement.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+
 </Project>

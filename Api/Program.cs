@@ -1,6 +1,8 @@
 using Api;
 using Api.Services.EmailServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PublicationManagement.Model.Config;
@@ -30,6 +32,12 @@ builder.Services.Configure<DataConfig>(builder.Configuration.GetSection("Connect
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddScoped<IEmailSeervices, EmailServ>();
+builder.Services.Configure<FormOptions>(o =>
+{
+    o.ValueLengthLimit = int.MaxValue;
+    o.MultipartBodyLengthLimit = int.MaxValue;
+    o.MemoryBufferThreshold = int.MaxValue;
+});
 RegisterServices.RegisterService(builder.Services);
 builder.Services.AddEndpointsApiExplorer();
 
@@ -90,6 +98,13 @@ builder.Services.AddAuthentication(options => {
 
 var app = builder.Build();
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+    RequestPath = new PathString("/Resources")
+});
 //app.UseCors("AllowAngularOrigins");
 
 // Configure the HTTP request pipeline.
