@@ -27,7 +27,7 @@ namespace Api.Controllers
         public async Task<IActionResult> Login(loginModels logindata)
         {
             IActionResult response = Unauthorized();
-            var user = AuthenticateUser(logindata);
+             AuthenticateUser(logindata);
             if (await iloginServices.Login(logindata) == 1)
             {
                 var tokenString = GenerateJSONWebToken(logindata);
