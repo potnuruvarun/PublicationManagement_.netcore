@@ -1,4 +1,5 @@
 ﻿using PublicationManagement.data.Publishing;
+using PublicationManagement.Model;
 using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
 using System;
@@ -56,6 +57,11 @@ namespace PublicationManagement.Services.PublishServices
         public async  Task<IEnumerable<StudentRoleModels>> students()
         {
             return await publishing.students();
+        }
+
+        public async Task<int> upload(upload upload)
+        {
+            return await  publishing.upload(upload);
         }
 
         public async Task<IEnumerable<PublishingModels>> viewdata()

@@ -18,5 +18,9 @@ namespace PublicationManagement.Services.Login
 
         Task<IEnumerable<RegistartionModel>> profilepic();
 
+        Task<int> otpverify(otpmodel model);
+
+        Task<int> resetpassword(otpmodel model);
+
     }
 }

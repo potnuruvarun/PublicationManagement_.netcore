@@ -22,28 +22,5 @@ namespace Api.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult SendEmail(EmailDto email)
-        {
-            //var Email = new MimeMessage();
-            //Email.From.Add(MailboxAddress.Parse("patrick3@ethereal.email "));
-            //Email.To.Add(MailboxAddress.Parse("patrick3@ethereal.email "));
-            //Email.Subject = "Test an email";
-            //Email.Body = new TextPart(TextFormat.Html)
-            //{
-            //    Text = body
-            //};
-            //using var smtp = new MailKit.Net.Smtp.SmtpClient();
-            //smtp.Connect("smtp.ethereal.email",587,MailKit.Security.SecureSocketOptions.StartTls);
-            //smtp.Authenticate("patrick3@ethereal.email", "bJaKcfjMxnt211z14X");
-            //smtp.Send(Email);
-            //smtp.Disconnect(true);
-
-            emailSeervices.SendEmail(email);
-
-            return Ok();
-
-
-        }
     }
 }

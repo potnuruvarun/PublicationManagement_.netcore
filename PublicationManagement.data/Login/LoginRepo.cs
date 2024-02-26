@@ -40,6 +40,37 @@ namespace PublicationManagement.data.Login
 
         }
 
+        public async Task<int> otpverification(otpmodel model)
+        {
+            var para = new DynamicParameters();
+            para.Add("@email", model.email);
+            para.Add("@otp", model.otp);
+            var data=await ExecuteAsync<int>(StorageProcedure._spotp,para,commandType:CommandType.StoredProcedure);
+            if (data != 0)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+        public async Task<int> restpasssword(otpmodel model)
+        {
+            var para = new DynamicParameters();
+            para.Add("@email", model.email);
+            para.Add("@otp", model.otp);
+            para.Add("@password", model.password);
+            var data = await ExecuteAsync<int>(StorageProcedure.sp_resetpassword, para, commandType: CommandType.StoredProcedure);
+            if (data != 0)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+
+
         public async Task<IEnumerable<RegistartionModel>> Profile()
         {
             var parameter=new DynamicParameters();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,8 @@ namespace PublicationManagement.Model.RegistrationModels
 {
     public class RegistartionModel
     {
-        public int id { get; set; }
 
         public string? Fullname { get; set; }
-
         public string? MobileNumber { get; set; }
 
         public string? Email { get; set; }
@@ -20,6 +19,9 @@ namespace PublicationManagement.Model.RegistrationModels
 
         public string? Address { get; set; }
 
-        public byte[]? ProfilePhoto { get; set; }    
+        public IFormFile photodata { get; set; }
+
+
+        public byte[]? ProfilePhoto { get; set; }
     }
 }

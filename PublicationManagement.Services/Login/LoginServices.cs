@@ -22,6 +22,12 @@ namespace PublicationManagement.Services.Login
           return await  repo.login(logindata);
         }
 
+        public async Task<int> otpverify(otpmodel model)
+        {
+            return await repo.otpverification(model);
+        }
+
+
         public async Task<IEnumerable<RegistartionModel>> profilepic()
         {
             return await repo.Profile();
@@ -35,6 +41,11 @@ namespace PublicationManagement.Services.Login
         public async Task<int> registration(RegistartionModel models)
         {
             return await repo.Registration(models);
+        }
+
+        public async Task<int> resetpassword(otpmodel model)
+        {
+            return await repo.restpasssword(model);
         }
     }
 }

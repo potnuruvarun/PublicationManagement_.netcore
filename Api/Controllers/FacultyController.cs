@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using PublicationManagement.Model.Publishmodel;
 using PublicationManagement.Services.Facultypublishing;
 using System.Net.Http.Headers;
+
 
 namespace Api.Controllers
 {
@@ -10,16 +12,18 @@ namespace Api.Controllers
     [ApiController]
     public class FacultyController : ControllerBase
     {
+        private readonly IWebHostEnvironment environment;
         IFacultypublishingServices Services;
-        public FacultyController(IFacultypublishingServices _services)
+        public FacultyController(IFacultypublishingServices _services, IWebHostEnvironment environment)
         {
             Services = _services;
+            this.environment = environment;
         }
 
         [HttpPost]
         public async Task<IActionResult> Facultypublish(FacultyPublishingModel model)
         {
-            Services.Publish(model);
+            await Services.Publish(model);
             return Ok();
         }
 
@@ -34,7 +38,7 @@ namespace Api.Controllers
         [HttpPost, DisableRequestSizeLimit]
         public async Task<IActionResult> upload()
         {
-            
+
             try
             {
 
@@ -64,7 +68,19 @@ namespace Api.Controllers
             }
         }
 
-
+        //[HttpPut("Uploading")]
+        //public async Task<IActionResult>uploadImage(IFormFile formFile,string productcode )
+        //{
+        //    ApiResponseType response = new ApiResponseType();
+        //    string Filepath = this.environment.WebRootPath + "\\Upload\\Product" + productcode;
+        //    if(!System.IO.Directory.Exists(Filepath))
+        //    {
+        //        System.IO.Directory.CreateDirectory(Filepath);
+        //    }
+        //    string imagepath=Filepath
+        //    return Ok(response);
+        //}
 
     }
+  
 }

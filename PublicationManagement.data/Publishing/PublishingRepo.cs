@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using PublicationManagement.Common.helpers;
+using PublicationManagement.Model;
 using PublicationManagement.Model.Config;
 using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
@@ -82,6 +83,15 @@ namespace PublicationManagement.data.Publishing
         public async Task<IEnumerable<StudentRoleModels>> students()
         {
             return await QueryAsync<StudentRoleModels>(StorageProcedure.sp_Studnet, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<int> upload(upload upload)
+        {
+            var para = new DynamicParameters();
+            para.Add("@UserName", upload.UserName);
+            para.Add("@DocFile", upload.DocFile);
+            para.Add("@Image", upload.Image);
+            return await ExecuteAsync<upload>(StorageProcedure.upload,para,commandType: CommandType.StoredProcedure);
         }
 
         public async  Task<IEnumerable<PublishingModels>> Viewdata()

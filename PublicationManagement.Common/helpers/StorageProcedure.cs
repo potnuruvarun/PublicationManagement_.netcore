@@ -17,6 +17,7 @@ namespace PublicationManagement.Common.helpers
 
         #region MyRegion
         public const  string? publish = "sp_publishing";
+        public const string? upload = "uploaddetails";
         #endregion
 
         #region MyRegion
@@ -45,5 +46,11 @@ namespace PublicationManagement.Common.helpers
         #region searchdata
         public const string searchdata = "searchdata";
         #endregion
+
+        #region  otpverification
+        public const string _spotp = "_spotp";
+        public const string sp_resetpassword = "sp_resetpassword";
+        #endregion
+
     }
 }

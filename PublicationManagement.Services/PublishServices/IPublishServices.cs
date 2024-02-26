@@ -1,4 +1,5 @@
-﻿using PublicationManagement.Model.DropdownModels;
+﻿using PublicationManagement.Model;
+using PublicationManagement.Model.DropdownModels;
 using PublicationManagement.Model.Publishmodel;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace PublicationManagement.Services.PublishServices
         Task<int> Delete(int id);
 
         Task<IEnumerable<PublishingModels>> Edit(int id);
+
+        Task<int> upload(upload upload);
 
     }
 }

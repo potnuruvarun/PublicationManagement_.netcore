@@ -20,6 +20,9 @@ namespace PublicationManagement.data.Login
 
         Task<IEnumerable<RegistartionModel>> Profile();
 
+        Task<int> otpverification(otpmodel  model);
+        Task<int> restpasssword(otpmodel model);
+
         //void SendEmail(Message message);
 
 

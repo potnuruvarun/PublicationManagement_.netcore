@@ -6,6 +6,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PublicationManagement.Model.Config;
+using PublicationManagement.Model.LoginModels;
 using PublicationManagement.Model.mail;
 using System.Configuration;
 using System.Text;
@@ -17,6 +18,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.Configure<DataConfig>(builder.Configuration.GetSection("ConnectionStrings"));
+builder.Services.AddHttpClient();
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IEmailSeervices, EmailServ>();
 
 
 //builder.Services.AddCors(options =>
