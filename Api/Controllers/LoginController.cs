@@ -12,6 +12,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Net.Http.Json;
 using Api.Services.EmailServices;
+using Microsoft.VisualBasic;
 
 namespace Api.Controllers
 {
@@ -22,12 +23,17 @@ namespace Api.Controllers
         IloginServices iloginServices;
         IConfiguration configuration;
         IEmailSeervices mailserv;
-
         public LoginController(IloginServices _iloginServices, IConfiguration configuration, IEmailSeervices _mailserv)
         {
             iloginServices = _iloginServices;
             this.configuration = configuration;
             mailserv = _mailserv;
+        }
+        private Dictionary<string, DateTime> _otpDict = new Dictionary<string, DateTime>();
+
+        public class OtpData
+        {
+            public DateTime Expiration { get; set; }
         }
 
         [HttpPost]
@@ -112,6 +118,12 @@ namespace Api.Controllers
         {
 
             var otp = GenerateRandomOtp();
+            //DateTime expiration = DateAndTime.Now.AddMinutes(2);
+            //_otpDict[email] = expiration;
+            //OtpData data = new OtpData()
+            //{
+            //    Expiration = expiration
+            //};
             var model = new otpmodel
             {
                 email = email,
@@ -138,7 +150,7 @@ namespace Api.Controllers
         [Route("reset")]
         public async Task<IActionResult> reset(otpmodel models)
         {
-
+           
             if (await iloginServices.resetpassword(models) == 1)
             {
                 return Ok("OTP sent successfully");
@@ -147,8 +159,6 @@ namespace Api.Controllers
             {
                 return BadRequest();
             }
-
-
         }
 
         [HttpPost]
