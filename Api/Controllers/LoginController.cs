@@ -162,7 +162,7 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        [Route("Sendinmail")]
+        [Route("Sendmail")]
         public async Task<IActionResult> Send([FromForm] MailRequest request)
         {
             try

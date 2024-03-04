@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PublicationManagement.Model;
 using PublicationManagement.Model.Publishmodel;
 using PublicationManagement.Services.Facultypublishing;
 using PublicationManagement.Services.PublishServices;
+using System.Data;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
@@ -13,7 +15,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class PublishController : ControllerBase
     {
         IPublishServices services;
@@ -26,24 +28,85 @@ namespace Api.Controllers
 
         }
 
+        [HttpGet("ExportExcel")]
+
+        public async Task<IActionResult> GetExcelfile()
+        {
+            var employeeData = await GetEmployeedata();
+
+            string base64String;
+
+            using (var wb = new XLWorkbook())
+            {
+                var sheet = wb.AddWorksheet((System.Data.DataTable)employeeData, "Employee Records");
+
+                // Apply font color to columns 1 to 5
+                sheet.Columns(1, 5).Style.Font.FontColor = XLColor.Black;
+
+                using (var ms = new MemoryStream())
+                {
+                    wb.SaveAs(ms);
+
+                    // Convert the Excel workbook to a base64-encoded string
+                    base64String = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+
+            // Return a CreatedResult with the base64-encoded Excel data
+            return new CreatedResult(string.Empty, new
+            {
+               
+                Data = base64String
+            });
+
+        }
 
         [HttpGet]
-       
         public async Task<IActionResult> Get()
         {
             return Ok(await services.Alldata());
         }
 
+        [NonAction]
+        public async Task<DataTable> GetEmployeedata()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.TableName = "Employeelist";
+            dataTable.Columns.Add("publicationdetail", typeof(string));
+            dataTable.Columns.Add("dateofpublish", typeof(DateTime));
+            dataTable.Columns.Add("publisherType", typeof(string));
+            // Apply font color to columns 1 to 5
+            var employeeData = await services.Alldata();
+            foreach (var employee in employeeData)
+            {
+                DataRow row = dataTable.NewRow();
+                row["publicationdetail"] = employee.Publicationdetail;
+                row["dateofpublish"] = employee.Dateofpublish;
+                row["publisherType"] = employee.PublisherType;
+                dataTable.Rows.Add(row);
+            }
+            //foreach (var employee in employeeData)
+            //{
+            //    DataRow row = dataTable.NewRow();
+            //    row["publicationdetail"] = employee.Publicationdetail;
+            //    row["dateofpublish"] = employee.Dateofpublish;
+            //    row["publisherType"] = employee.PublisherType;
+            //    dataTable.Rows.Add(row);
+            //}
+
+            return dataTable;
+        }
+
 
         [HttpGet]
-       
+
         public async Task<IActionResult> Studentdata()
         {
             return Ok(await services.viewdata());
         }
 
         [HttpGet]
-  
+
 
         public async Task<IActionResult> Facultydata()
         {
@@ -70,7 +133,7 @@ namespace Api.Controllers
         [HttpGet]
         [Route("{id:int}")]
 
-        public async Task <IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
             return Ok(await services.Edit(id));
         }
@@ -113,7 +176,7 @@ namespace Api.Controllers
         //    {
         //        result = "File uploaded faild";
         //    }
-           
+
         //    return Ok();
         //}
         //public IActionResult AddFile()

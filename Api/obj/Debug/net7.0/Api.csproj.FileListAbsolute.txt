@@ -72,3 +72,10 @@ C:\Users\sit363\source\repos\PublicationManagement\Api\obj\Debug\net7.0\Api.pdb
 C:\Users\sit363\source\repos\PublicationManagement\Api\obj\Debug\net7.0\Api.genruntimeconfig.cache
 C:\Users\sit363\source\repos\PublicationManagement\Api\obj\Debug\net7.0\ref\Api.dll
 C:\Users\sit363\source\repos\PublicationManagement\Api\obj\Debug\net7.0\Api.csproj.Up2Date
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\ClosedXML.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\DocumentFormat.OpenXml.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\ExcelNumberFormat.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\Irony.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\SixLabors.Fonts.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\System.IO.Packaging.dll
+C:\Users\sit363\source\repos\PublicationManagement\Api\bin\Debug\net7.0\XLParser.dll
