@@ -22,5 +22,7 @@ namespace PublicationManagement.Services.Login
 
         Task<int> resetpassword(otpmodel model);
 
+        Task<int> verify(loginModels models);
+
     }
 }

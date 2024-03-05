@@ -23,6 +23,8 @@ namespace PublicationManagement.data.Login
         Task<int> otpverification(otpmodel  model);
         Task<int> restpasssword(otpmodel model);
 
+        Task<int> verify(loginModels models);
+
         //void SendEmail(Message message);
 
 

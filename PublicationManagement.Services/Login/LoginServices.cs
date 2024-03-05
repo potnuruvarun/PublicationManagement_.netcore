@@ -47,5 +47,10 @@ namespace PublicationManagement.Services.Login
         {
             return await repo.restpasssword(model);
         }
+
+        public async Task<int> verify(loginModels models)
+        {
+            return await repo.verify(models);
+        }
     }
 }

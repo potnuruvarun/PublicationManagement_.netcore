@@ -20,15 +20,15 @@ namespace PublicationManagement.data.Login
         public IConfiguration configuration;
         public LoginRepo(IOptions<DataConfig> connectionString, IConfiguration config = null) : base(connectionString, config)
         {
-            configuration=config;
+            configuration = config;
         }
 
-        public async Task <int> login(loginModels logindata)
+        public async Task<int> login(loginModels logindata)
         {
             var parameters = new DynamicParameters();
             parameters.Add("Email", logindata.Email);
             parameters.Add("password", logindata.password);
-            var data=await  QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters,commandType:CommandType.StoredProcedure);
+            var data = await QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
             if (data != 0)
             {
                 return 1;
@@ -45,7 +45,7 @@ namespace PublicationManagement.data.Login
             var para = new DynamicParameters();
             para.Add("@email", model.email);
             para.Add("@otp", model.otp);
-            var data=await ExecuteAsync<int>(StorageProcedure._spotp,para,commandType:CommandType.StoredProcedure);
+            var data = await ExecuteAsync<int>(StorageProcedure._spotp, para, commandType: CommandType.StoredProcedure);
             if (data != 0)
             {
                 return 1;
@@ -73,9 +73,9 @@ namespace PublicationManagement.data.Login
 
         public async Task<IEnumerable<RegistartionModel>> Profile()
         {
-            var parameter=new DynamicParameters();
+            var parameter = new DynamicParameters();
             parameter.Add("@Email");
-            return await QueryAsync<RegistartionModel>(StorageProcedure.sp_profilephoto,parameter,commandType: CommandType.StoredProcedure);
+            return await QueryAsync<RegistartionModel>(StorageProcedure.sp_profilephoto, parameter, commandType: CommandType.StoredProcedure);
         }
 
         public async Task<int> Registration(RegistartionModel models)
@@ -98,14 +98,29 @@ namespace PublicationManagement.data.Login
                 return 0;
             }
 
-        
+
         }
 
         public async Task<IEnumerable<RegistartionModel>> Registrationdata()
         {
-           return await  QueryAsync<RegistartionModel>(StorageProcedure.registrationdata, commandType:CommandType.StoredProcedure);
+            return await QueryAsync<RegistartionModel>(StorageProcedure.registrationdata, commandType: CommandType.StoredProcedure);
         }
 
+        public async Task<int> verify(loginModels models)
+        {
+            var para = new DynamicParameters();
+            para.Add("@email",models.Email);
+            para.Add("@password", models.password);
+            var data = await ExecuteAsync<int>(StorageProcedure.verify, para, commandType: CommandType.StoredProcedure);
+            if (data != 0)
+            {
+                return data;
+            }
+            else
+            {
+                return 0;
+            }
 
+        }
     }
 }

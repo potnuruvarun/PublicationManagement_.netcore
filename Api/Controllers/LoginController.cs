@@ -150,7 +150,7 @@ namespace Api.Controllers
         [Route("reset")]
         public async Task<IActionResult> reset(otpmodel models)
         {
-           
+
             if (await iloginServices.resetpassword(models) == 1)
             {
                 return Ok("OTP sent successfully");
@@ -160,6 +160,8 @@ namespace Api.Controllers
                 return BadRequest();
             }
         }
+
+       
 
         [HttpPost]
         [Route("Sendmail")]
@@ -177,6 +179,22 @@ namespace Api.Controllers
             }
 
         }
+
+        [HttpPost]
+        [Route("verify")]
+        public async Task<IActionResult> verify(loginModels models)
+        {
+            if (await iloginServices.verify(models) == 1)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
+
 
         //[HttpPost("api/send-sms")]
         //public IActionResult SendSms(SmsMessage model)

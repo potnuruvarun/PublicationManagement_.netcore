@@ -11,7 +11,7 @@ namespace PublicationManagement.Common.helpers
         public const string? login = "Sp_login";
         public const string? registration = "sp_Registration";
         public const string? registrationdata = "sp_viewregistrationdata";
-
+        public const string verify = "Sp_verify";
         public const string? sp_profilephoto = "sp_profilephoto";
 
 
@@ -31,7 +31,6 @@ namespace PublicationManagement.Common.helpers
         #region MyRegion
         public const string? facultyviewdata = "sp_facultyviewdata";
         public const string? facultypublish = "sp_facultypublishing";
-
         public const string? alldata = "sp_Alldata";
         public const string? countfaculty = "sp_countfacultypublishers";
         public const string? countstudent = "sp_countpublishers";
