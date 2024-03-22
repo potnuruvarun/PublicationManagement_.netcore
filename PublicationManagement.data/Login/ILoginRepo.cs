@@ -11,7 +11,7 @@ namespace PublicationManagement.data.Login
 {
     public interface ILoginRepo
     {
-        //Task<int> login(loginModels logindata);
+        Task<int> loginn(loginModels logindata);
         Task<loginresponse> login(loginModels logindata);
 
         Task<int> Registration(RegistartionModel models);

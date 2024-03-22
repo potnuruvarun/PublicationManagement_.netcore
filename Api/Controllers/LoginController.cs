@@ -13,6 +13,7 @@ using System.Text.Json;
 using System.Net.Http.Json;
 using Api.Services.EmailServices;
 using Microsoft.VisualBasic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers
 {

@@ -20,7 +20,7 @@ namespace PublicationManagement.Controllers
         public async  Task <IActionResult> Login(loginModels logindata)
         {
             if (
-                await services.Login(logindata) ==1)
+                await services.Loginn(logindata) ==1)
             {
                 return RedirectToAction("Index", "Home");
             }

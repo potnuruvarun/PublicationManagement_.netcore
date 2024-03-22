@@ -42,7 +42,7 @@ namespace PublicationManagement.Controllers
 
             var data = await services.profilepic();
             ViewBag.data = data;
-            if (await services.Login(logindata) ==1)
+            if (await services.Loginn(logindata) ==1)
             {
                 HttpContext.Session.SetString("username", logindata.Email);
                 //byte[] profilePhotoBytes =data(model.ProfilePhoto);

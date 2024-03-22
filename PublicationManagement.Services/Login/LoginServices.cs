@@ -17,10 +17,10 @@ namespace PublicationManagement.Services.Login
         {
             repo = _repo;
         }
-        //public async Task<int> Login(loginModels logindata)
-        //{
-        //    return await repo.login(logindata);
-        //}
+        public async Task<int> Loginn(loginModels logindata)
+        {
+            return await repo.loginn(logindata);
+        }
 
         public async Task<loginresponse> Login(loginModels logindata)
         {

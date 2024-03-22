@@ -41,22 +41,22 @@ namespace PublicationManagement.data.Login
 
         }
 
-        //public async Task<int> login(loginModels logindata)
-        //{
-        //    var parameters = new DynamicParameters();
-        //    parameters.Add("Email", logindata.Email);
-        //    parameters.Add("password", logindata.password);
-        //    var data = await QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
-        //    if (data != 0)
-        //    {
-        //        return 1;
-        //    }
-        //    else
-        //    {
-        //        return 0;
-        //    }
+        public async Task<int> loginn(loginModels logindata)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("Email", logindata.Email);
+            parameters.Add("password", logindata.password);
+            var data = await QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
+            if (data != 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
 
-        //}
+        }
 
         public async Task<int> otpverification(otpmodel model)
         {
