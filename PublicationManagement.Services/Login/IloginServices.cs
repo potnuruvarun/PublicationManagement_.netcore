@@ -10,7 +10,8 @@ namespace PublicationManagement.Services.Login
 {
     public interface IloginServices
     {
-        Task<int> Login(loginModels logindata);
+       // Task<int> Login(loginModels logindata);
+        Task<loginresponse> Login(loginModels logindata);
         Task<int> registration(RegistartionModel models);
 
 

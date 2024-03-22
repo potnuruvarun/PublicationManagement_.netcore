@@ -11,19 +11,21 @@ namespace PublicationManagement.data.Login
 {
     public interface ILoginRepo
     {
-       Task <int> login(loginModels logindata);
+        //Task<int> login(loginModels logindata);
+        Task<loginresponse> login(loginModels logindata);
 
         Task<int> Registration(RegistartionModel models);
 
-       Task <IEnumerable<RegistartionModel>> Registrationdata();
+        Task<IEnumerable<RegistartionModel>> Registrationdata();
 
 
         Task<IEnumerable<RegistartionModel>> Profile();
 
-        Task<int> otpverification(otpmodel  model);
+        Task<int> otpverification(otpmodel model);
         Task<int> restpasssword(otpmodel model);
 
         Task<int> verify(loginModels models);
+
 
         //void SendEmail(Message message);
 

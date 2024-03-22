@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,13 @@ namespace PublicationManagement.Model.LoginModels
     public class loginModels
     {
         public string? Email { get; set; }
+        public string? password { get; set; }
+    }
 
-        public string?  password { get; set; }
+    public class loginresponse
+    {
+        public int Active { get; set; }
+        
     }
     public class MailRequest
     {
@@ -40,5 +46,15 @@ namespace PublicationManagement.Model.LoginModels
         public string email { get; set; }
         public int otp { get; set; }
         public string password { get; set; }
+    }
+    public class GoogleAuthConfig
+    {
+        public string ClientId { get; set; }
+        public string ClientSecret { get; set; }
+    }
+    public class GoogleSignInVM
+    {
+        [Required]
+        public string IdToken { get; set; }
     }
 }

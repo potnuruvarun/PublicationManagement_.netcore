@@ -23,5 +23,8 @@ namespace PublicationManagement.Model.RegistrationModels
 
 
         public byte[]? ProfilePhoto { get; set; }
+
+        public int Active { get; set; }
+
     }
 }

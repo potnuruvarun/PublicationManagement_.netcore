@@ -23,22 +23,40 @@ namespace PublicationManagement.data.Login
             configuration = config;
         }
 
-        public async Task<int> login(loginModels logindata)
+        public async Task<loginresponse> login(loginModels logindata)
         {
             var parameters = new DynamicParameters();
             parameters.Add("Email", logindata.Email);
             parameters.Add("password", logindata.password);
-            var data = await QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
-            if (data != 0)
+            var data = await QueryFirstOrDefaultAsync<loginresponse>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
+            if (data != null)
             {
-                return 1;
+                return new loginresponse
+                {
+                    
+                    Active = data.Active,
+                };
             }
-            else
-            {
-                return 0;
-            }
+            return null;
 
         }
+
+        //public async Task<int> login(loginModels logindata)
+        //{
+        //    var parameters = new DynamicParameters();
+        //    parameters.Add("Email", logindata.Email);
+        //    parameters.Add("password", logindata.password);
+        //    var data = await QueryFirstOrDefaultAsync<int>(StorageProcedure.login, parameters, commandType: CommandType.StoredProcedure);
+        //    if (data != 0)
+        //    {
+        //        return 1;
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+
+        //}
 
         public async Task<int> otpverification(otpmodel model)
         {
@@ -109,7 +127,7 @@ namespace PublicationManagement.data.Login
         public async Task<int> verify(loginModels models)
         {
             var para = new DynamicParameters();
-            para.Add("@email",models.Email);
+            para.Add("@email", models.Email);
             para.Add("@password", models.password);
             var data = await ExecuteAsync<int>(StorageProcedure.verify, para, commandType: CommandType.StoredProcedure);
             if (data != 0)

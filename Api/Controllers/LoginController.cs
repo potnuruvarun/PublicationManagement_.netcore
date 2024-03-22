@@ -29,6 +29,7 @@ namespace Api.Controllers
             this.configuration = configuration;
             mailserv = _mailserv;
         }
+        public int Active { get; set; }
         private Dictionary<string, DateTime> _otpDict = new Dictionary<string, DateTime>();
 
         public class OtpData
@@ -41,15 +42,42 @@ namespace Api.Controllers
         {
             IActionResult response = Unauthorized();
             AuthenticateUser(logindata);
-            if (await iloginServices.Login(logindata) == 1)
+            var data = iloginServices.Login(logindata);
+            if (data.Result != null)
             {
-                var tokenString = GenerateJSONWebToken(logindata);
-                response = Ok(new { token = tokenString });
-                //return Ok();
+                if (data.Result.Active == 1)
+                {
+                    var tokenString = GenerateJSONWebToken(logindata);
+                    response = Ok(new { token = tokenString, data.Result });
+                }
+                else
+                {
+                    response = Ok(data.Result);
+                }
             }
             return response;
 
         }
+
+
+
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> Login(loginModels logindata)
+        //{
+        //    IActionResult response = Unauthorized();
+        //    AuthenticateUser(logindata);
+        //    if (await iloginServices.Login(logindata) == 1)
+        //    {
+        //        var tokenString = GenerateJSONWebToken(logindata);
+
+        //        response = Ok(new { token = tokenString });
+        //        //return Ok();
+        //    }
+        //    return response;
+
+        //}
 
         [HttpPost]
         [Route("register")]
@@ -161,7 +189,7 @@ namespace Api.Controllers
             }
         }
 
-       
+
 
         [HttpPost]
         [Route("Sendmail")]
